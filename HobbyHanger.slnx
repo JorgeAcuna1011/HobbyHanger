@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="API.HobbyHanger/API.HobbyHanger.csproj" />
+  <Project Path="Application.HobbyHanger/Application.HobbyHanger.csproj" />
+  <Project Path="Domain.HobbyHanger/Domain.HobbyHanger.csproj" />
+  <Project Path="Persistence.HobbyHanger/Persistence.HobbyHanger.csproj" />
+</Solution>
