@@ -56,9 +56,12 @@ namespace Persistence.HobbyHanger.Migrations
                     b.UseTphMappingStrategy();
                 });
 
-            modelBuilder.Entity("Domain.HobbyHanger.Clothe", b =>
+            modelBuilder.Entity("Domain.HobbyHanger.Clothes", b =>
                 {
                     b.HasBaseType("Domain.HobbyHanger.Product");
+
+                    b.Property<int>("Category")
+                        .HasColumnType("INTEGER");
 
                     b.Property<int>("Condition")
                         .HasColumnType("INTEGER");
@@ -66,10 +69,13 @@ namespace Persistence.HobbyHanger.Migrations
                     b.Property<int>("Gender")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Size")
+                    b.Property<int?>("NumberSize")
                         .HasColumnType("INTEGER");
 
-                    b.HasDiscriminator().HasValue("Clothe");
+                    b.Property<int?>("Size")
+                        .HasColumnType("INTEGER");
+
+                    b.HasDiscriminator().HasValue("Clothes");
                 });
 #pragma warning restore 612, 618
         }

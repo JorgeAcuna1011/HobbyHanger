@@ -6,12 +6,10 @@ using Persistence.HobbyHanger;
 
 namespace API.HobbyHanger.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class ClothesController(HobbyHangerDbContext context) : ControllerBase
+    public class ClothesController(HobbyHangerDbContext context) : BaseApiController
     {
         [HttpGet]
-        public async Task<ActionResult<List<Clothe>>> GetClothes()
+        public async Task<ActionResult<List<Clothes>>> GetClothes()
         {
             return await context.Clothes.ToListAsync();
         }

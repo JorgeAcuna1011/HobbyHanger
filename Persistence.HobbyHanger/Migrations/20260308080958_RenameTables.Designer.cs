@@ -11,8 +11,8 @@ using Persistence.HobbyHanger;
 namespace Persistence.HobbyHanger.Migrations
 {
     [DbContext(typeof(HobbyHangerDbContext))]
-    [Migration("20260227212257_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20260308080958_RenameTables")]
+    partial class RenameTables
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -63,13 +63,19 @@ namespace Persistence.HobbyHanger.Migrations
                 {
                     b.HasBaseType("Domain.HobbyHanger.Product");
 
+                    b.Property<int>("Category")
+                        .HasColumnType("INTEGER");
+
                     b.Property<int>("Condition")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("Gender")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Size")
+                    b.Property<int?>("NumberSize")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("Size")
                         .HasColumnType("INTEGER");
 
                     b.HasDiscriminator().HasValue("Clothes");
