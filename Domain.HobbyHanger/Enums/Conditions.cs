@@ -1,4 +1,4 @@
-﻿namespace Domain.HobbyHanger;
+﻿namespace Domain.HobbyHanger.Enums;
 
 public enum Conditions
-{ Poor, Fair, Good, Used, LikeNew, New}
+{ Poor, Fair, Good, Used, Excellent, LikeNew, New}

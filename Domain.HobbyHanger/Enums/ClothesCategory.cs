@@ -1,5 +1,5 @@
-﻿namespace Domain.HobbyHanger
+﻿namespace Domain.HobbyHanger.Enums
 {
     public enum ClothesCategory
-    { Top, Sweater, Outerwear, Jacket, Jean, Bottom }
+    { Top, Outerwear, Bottom, Knitwear, Headwear, Accessory, NotSpecified }
 }

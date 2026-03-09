@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Domain.HobbyHanger;
+﻿namespace Domain.HobbyHanger;
 
 public abstract class Product
 {
@@ -10,5 +8,5 @@ public abstract class Product
     public required double Price { get; set; }
     public string? Brand { get; set; }
     public DateTime Date { get; set;  }
-    public bool IsSold { get; set; } = false;
+    public bool IsSold { get; set; }
 }

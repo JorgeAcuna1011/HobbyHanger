@@ -11,7 +11,9 @@ namespace API.HobbyHanger.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Clothes>>> GetClothes()
         {
-            return await context.Clothes.ToListAsync();
+            return await context.Clothes
+                .Include(x => x.Measurements)
+                .ToListAsync();
         }
     }
 }
