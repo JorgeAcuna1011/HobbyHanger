@@ -1,3 +1,4 @@
+using Application.HobbyHanger.Clothing.Queries;
 using Microsoft.EntityFrameworkCore;
 using Persistence.HobbyHanger;
 
@@ -10,6 +11,8 @@ builder.Services.AddDbContext<HobbyHangerDbContext>(opt =>
     opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 builder.Services.AddCors();
+builder.Services.AddMediatR(x => 
+    x.RegisterServicesFromAssemblyContaining<GetClothingList.Handler>());
 
 var app = builder.Build();
 
