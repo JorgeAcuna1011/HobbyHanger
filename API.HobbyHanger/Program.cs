@@ -1,4 +1,5 @@
 using Application.HobbyHanger.Clothing.Queries;
+using Application.HobbyHanger.Core;
 using Microsoft.EntityFrameworkCore;
 using Persistence.HobbyHanger;
 
@@ -13,6 +14,10 @@ builder.Services.AddDbContext<HobbyHangerDbContext>(opt =>
 builder.Services.AddCors();
 builder.Services.AddMediatR(x => 
     x.RegisterServicesFromAssemblyContaining<GetClothingList.Handler>());
+builder.Services.AddAutoMapper(cfg =>
+{
+    cfg.AddProfile<MappingProfiles>();
+});
 
 var app = builder.Build();
 

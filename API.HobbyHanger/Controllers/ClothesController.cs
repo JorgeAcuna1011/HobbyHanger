@@ -24,5 +24,13 @@ namespace API.HobbyHanger.Controllers
         {
             return await Mediator.Send(new CreateClothing.Command { Clothes = clothes});
         }
+
+        [HttpPut]
+        public async Task<ActionResult> EditClothes(Clothes clothes)
+        {
+            await Mediator.Send(new EditClothing.Command{Clothes = clothes});
+            
+            return NoContent();
+        }
     }
 }
